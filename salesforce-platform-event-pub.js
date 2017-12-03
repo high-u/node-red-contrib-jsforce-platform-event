@@ -82,5 +82,5 @@ module.exports = function (RED) {
 
     });
   }
-  RED.nodes.registerType("salesforce-platform-event", SalesforcePlatformEvent);
+  RED.nodes.registerType("salesforce-platform-event-pub", SalesforcePlatformEvent);
 };

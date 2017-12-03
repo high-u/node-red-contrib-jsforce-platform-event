@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "node-red": {
     "nodes": {
-      "salesforce-platform-event": "salesforce-platform-event.js",
+      "salesforce-platform-event-pub": "salesforce-platform-event-pub.js",
+      "salesforce-platform-event-sub": "salesforce-platform-event-sub.js",
       "salesforce-platform-event-config": "salesforce-platform-event-config.js"
     }
   },
   "description": "Salesforce Platform Event for Node-RED. Use jsforce.",
-  "main": "salesforce-platform-event.js",
+  "main": "salesforce-platform-event-pub.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

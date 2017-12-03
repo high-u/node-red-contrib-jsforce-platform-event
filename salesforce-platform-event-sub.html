@@ -1,4 +1,4 @@
-<script type="text/x-red" data-template-name="salesforce-platform-event">
+<script type="text/x-red" data-template-name="salesforce-platform-event-sub">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -22,7 +22,7 @@
     </div>    
 </script>
 
-<script type="text/x-red" data-help-name="salesforce-platform-event">
+<script type="text/x-red" data-help-name="salesforce-platform-event-sub">
 <dl class="message-properties">
     <dt>request</dt>
     <dd>
@@ -52,21 +52,21 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('salesforce-platform-event', {
-        category: 'Salesforce',
-        color: "#FF9A00",
-        defaults: {
-            salesforce: { type: "salesforce-platform-event-config", required: true },
-            eventname: { value: '' },
-            methodname: { value: '' },
-            name: { value: '' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "salesforce.png",
-        align: "left",
-        label: function () {
-            return this.name || "SFDC PF " + this.eventname + " " + this.methodname;
-        }
-    });
+  RED.nodes.registerType('salesforce-platform-event-sub', {
+    category: 'Salesforce',
+    color: "#FF9A00",
+    defaults: {
+      salesforce: { type: "salesforce-platform-event-config", required: true },
+      eventname: { value: '' },
+      methodname: { value: '' },
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "salesforce.png",
+    align: "left",
+    label: function () {
+      return this.name || "SFDC PF " + this.eventname + " " + this.methodname;
+    }
+  });
 </script>
