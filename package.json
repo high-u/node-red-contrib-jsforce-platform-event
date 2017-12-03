@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "node-red": {
     "nodes": {
-      "salesforce-platform-event": "salesforce-platform-event.js"
+      "salesforce-platform-event": "salesforce-platform-event.js",
+      "salesforce-platform-event-config": "salesforce-platform-event-config.js"
     }
   },
   "description": "Salesforce Platform Event for Node-RED. Use jsforce.",
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/high-u/node-red-contrib-salesforce-platform-event/issues"
   },
-  "homepage": "https://github.com/high-u/node-red-contrib-salesforce-platform-event#readme"
+  "homepage": "https://github.com/high-u/node-red-contrib-salesforce-platform-event#readme",
+  "dependencies": {
+    "jsforce": "^1.8.0"
+  }
 }

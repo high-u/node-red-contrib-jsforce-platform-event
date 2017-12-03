@@ -1,15 +1,14 @@
 module.exports = function (RED) {
   function RemoteServerNode(n) {
     RED.nodes.createNode(this, n);
-    this.accessKey = this.credentials.accessKey;
-    this.secretKey = this.credentials.secretKey;
-    this.region = n.region;
+    this.username = this.credentials.username;
+    this.password = this.credentials.password;
     this.name = n.name;
   }
   RED.nodes.registerType("salesforce-platform-event-config", RemoteServerNode, {
     credentials: {
-      accessKey: { type: "text" },
-      secretKey: { type: "text" }
+      username: { type: "text" },
+      password: { type: "text" }
     }
   });
 }
