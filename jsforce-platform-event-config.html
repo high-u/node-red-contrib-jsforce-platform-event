@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  RED.nodes.registerType('salesforce-platform-event-config', {
+    category: 'config',
+    defaults: {
+      name: { value: "AWS" },
+      region: { value: "us-east-1", required: true },
+    },
+    credentials: {
+      accessKey: { type: "text" },
+      secretKey: { type: "text" }
+    },
+    label: function () {
+      return this.name;
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="salesforce-platform-event-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+	<input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-region"><i class="fa icon-globe"></i> Region</label>
+	<input type="text" id="node-config-input-region">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-accessKey"><i class="fa icon-check"></i> Access Id</label>
+        <input type="text" id="node-config-input-accessKey">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-secretKey"><i class="fa icon-check"></i> Secret Key</label>
+        <input type="text" id="node-config-input-secretKey">
+    </div>
+</script>
