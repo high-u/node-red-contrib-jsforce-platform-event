@@ -4,7 +4,7 @@
 
 |date|version|description|
 |:--:|:--:|:--|
-|2017-12-05|0.0.3|Released|
+|2017-12-05|0.1.3|Released|
 
 ## Feature
 
