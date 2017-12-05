@@ -1,45 +1,44 @@
 <script type="text/x-red" data-template-name="salesforce-platform-event-pub">
-<div class="form-row">
+  <div class="form-row">
     <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
-</div>
-<div class="form-row">
+  </div>
+  <div class="form-row">
     <label for="node-input-salesforce"><i class="fa fa-user"></i> Salesforce</label>
     <input type="text" id="node-input-salesforce">
-</div>
-<div class="form-row input-bucket-row">
+  </div>
+  <div class="form-row input-bucket-row">
     <label for="node-input-eventname"><i class="fa icon-tasks"></i> Event</label>
-    <input type="text" id="node-input-eventname" >
-    </input>
-</div>
+    <input type="text" id="node-input-eventname">
+  </div>
 </script>
 <script type="text/x-red" data-help-name="salesforce-platform-event-pub">
-<div>
+  <div>
     <a class="node-info-header expanded" href="#"><i class="fa fa-angle-right"></i>Inputs</a>
     <dl class="message-properties">
-        <dt>
-            Salesforce<span class="property-type">node</span>
-        </dt>
-        <dd>
-            Salesforce authentication
-        </dd>
-        <dt>
-            Event <span class="property-type">text</span>
-        </dt>
-        <dd>
-            Platform Event Object API Name (ex. pfobject__e)
-        </dd>
+      <dt>
+        Salesforce<span class="property-type">node</span>
+      </dt>
+      <dd>
+        Salesforce authentication
+      </dd>
+      <dt>
+        Event <span class="property-type">text</span>
+      </dt>
+      <dd>
+        Platform Event Object API Name (ex. pfobject__e)
+      </dd>
     </dl>
-</div>
+  </div>
 </script>
 <script type="text/javascript">
-RED.nodes.registerType('salesforce-platform-event-pub', {
+  RED.nodes.registerType('salesforce-platform-event-pub', {
     category: 'Salesforce',
     color: "#1793d7",
     defaults: {
-        salesforce: { type: "salesforce-platform-event-config", required: true },
-        eventname: { value: '', required: true },
-        name: { value: '' }
+      salesforce: { type: "salesforce-platform-event-config", required: true },
+      eventname: { value: '', required: true },
+      name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
@@ -47,7 +46,7 @@ RED.nodes.registerType('salesforce-platform-event-pub', {
     align: "left",
     paletteLabel: "Platform Event Pub",
     label: function () {
-        return this.name || "publish " + this.eventname;
+      return this.name || "publish " + this.eventname;
     }
-});
+  });
 </script>
