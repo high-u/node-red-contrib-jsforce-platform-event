@@ -1,5 +1,6 @@
 module.exports = function (RED) {
   "use strict";
+  var jsforce = require("jsforce");
 
   function SalesforcePlatformEvent(n) {
 
@@ -14,17 +15,17 @@ module.exports = function (RED) {
 
     var node = this;
 
-    var jsforce = require("jsforce");
-
-    const conn = new jsforce.Connection({ loginUrl: this.url });
-    conn.login(this.username, this.password, function (err, userInfo) {
+    var tpc = {};    
+    var conn = new jsforce.Connection({ loginUrl: node.url });
+    conn.login(node.username, node.password, function (err, userInfo) {
       if (err) {
         node.status({ fill: "red", shape: "dot", text: "Disconnected" });
         msg.error = err;
         node.send(msg);
       } else {
         node.status({ fill: "blue", shape: "dot", text: "Connected" });
-        conn.streaming.topic("/event/" + node.eventname).subscribe(function (message) {
+        tpc = conn.streaming.topic("/event/" + node.eventname);
+        tpc.subscribe(function (message) {
           var msg = {};
           msg.payload = message;
           node.send(msg);
@@ -32,8 +33,9 @@ module.exports = function (RED) {
       }
     });
 
-    node.on("input", function (msg) {
-      
+    node.on('close', function (done) {
+      tpc.unsubscribe();
+      done();
     });
   }
   RED.nodes.registerType("salesforce-platform-event-sub", SalesforcePlatformEvent);

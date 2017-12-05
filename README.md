@@ -123,14 +123,14 @@ npm install --save node-red-contrib-jsforce-platform-event
 
 - Publish Result
 
-![Publish Result](./screenshots/publish-result.png)
+![Publish Result](https://github.com/high-u/node-red-contrib-salesforce-platform-event/raw/master/screenshots/publish-result.png)
 
 - Susbscribe Result
 
-![Susbscribe Result](./screenshots/subscribe-result.png)
+![Susbscribe Result](https://github.com/high-u/node-red-contrib-salesforce-platform-event/raw/master/screenshots/subscribe-result.png)
 
 - Salesforce Platform Event Setting
 
-![Platform Event](./screenshots/platform-event.png)
+![Platform Event](https://github.com/high-u/node-red-contrib-salesforce-platform-event/raw/master/screenshots/platform-event.png)
 
 

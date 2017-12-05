@@ -1,5 +1,6 @@
 module.exports = function (RED) {
   "use strict";
+  var jsforce = require("jsforce");
 
   function SalesforcePlatformEvent(n) {
 
@@ -14,10 +15,8 @@ module.exports = function (RED) {
 
     var node = this;
 
-    var jsforce = require("jsforce");
-
-    const conn = new jsforce.Connection({ loginUrl: this.url });
-    conn.login(this.username, this.password, function (err, userInfo) {
+    const conn = new jsforce.Connection({ loginUrl: node.url });
+    conn.login(node.username, node.password, function (err, userInfo) {
       if (err) {
         node.status({ fill: "red", shape: "dot", text: "Disconnected" });
         msg.error = err;
