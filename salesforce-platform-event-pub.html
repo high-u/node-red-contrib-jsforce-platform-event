@@ -48,7 +48,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('salesforce-platform-event-pub', {
         category: 'Salesforce',
-        color: "#FF9A00",
+        color: "#1793d7",
         defaults: {
             salesforce: { type: "salesforce-platform-event-config", required: true },
             eventname: { value: '', required: true },
@@ -59,7 +59,7 @@
         icon: "salesforce.png",
         align: "left",
         label: function () {
-            return this.name || "SFDC PF " + this.eventname + " " + this.methodname;
+            return this.name || "publish " + this.eventname;
         }
     });
 </script>
