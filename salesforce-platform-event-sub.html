@@ -14,12 +14,6 @@
         <input type="text" id="node-input-eventname" >
         </input>
     </div>
-    
-    <div class="form-row input-bucket-row">
-        <label for="node-input-methodname"><i class="fa icon-filter"></i> Method</label>
-        <input type="text" id="node-input-methodname" >
-        </input>
-    </div>    
 </script>
 
 <script type="text/x-red" data-help-name="salesforce-platform-event-sub">
@@ -57,11 +51,10 @@
     color: "#FF9A00",
     defaults: {
       salesforce: { type: "salesforce-platform-event-config", required: true },
-      eventname: { value: '' },
-      methodname: { value: '' },
+      eventname: { value: '', required: true },
       name: { value: '' }
     },
-    inputs: 1,
+    inputs: 0,
     outputs: 1,
     icon: "salesforce.png",
     align: "left",
