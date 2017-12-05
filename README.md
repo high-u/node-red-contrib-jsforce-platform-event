@@ -3,7 +3,7 @@
 ## Released
 
 |date|version|description|
-|:--|:--|:--|
+|:--:|:--:|:--|
 |2017-12-05|0.0.3|Released|
 
 ## Feature
