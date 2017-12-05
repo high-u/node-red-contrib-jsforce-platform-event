@@ -1,49 +1,30 @@
 <script type="text/x-red" data-template-name="salesforce-platform-event-pub">
-    <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-
-    <div class="form-row">
-        <label for="node-input-salesforce"><i class="fa fa-user"></i> Salesforce</label>
-        <input type="text" id="node-input-salesforce">
-    </div>
-
-    <div class="form-row input-bucket-row">
-        <label for="node-input-eventname"><i class="fa icon-tasks"></i> Event</label>
-        <input type="text" id="node-input-eventname" >
-        </input>
-    </div>
+<div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+</div>
+<div class="form-row">
+    <label for="node-input-salesforce"><i class="fa fa-user"></i> Salesforce</label>
+    <input type="text" id="node-input-salesforce">
+</div>
+<div class="form-row input-bucket-row">
+    <label for="node-input-eventname"><i class="fa icon-tasks"></i> Event</label>
+    <input type="text" id="node-input-eventname" >
+    </input>
+</div>
 </script>
-
 <script type="text/x-red" data-help-name="salesforce-platform-event-pub">
 <div>
-    <dl>
+    <a class="node-info-header expanded" href="#"><i class="fa fa-angle-right"></i>Inputs</a>
+    <dl class="message-properties">
         <dt>
-            Salesforce 
+            Salesforce<span class="property-type">node</span>
         </dt>
         <dd>
-            <p>
-                Salesforce authentication
-            </p>
-            <p>
-                <ul>
-                    <li>
-                        URL
-                        <ul>
-                            <li>https://login.salesforce.com</li>
-                            <li>https://test.salesforce.com</li>
-                        </ul>
-                    </li>
-                    <li>Username</li>
-                    <li>Password</li>
-                </ul>
-            <p>
+            Salesforce authentication
         </dd>
-    </dl>
-    <dl>
         <dt>
-            Event 
+            Event <span class="property-type">text</span>
         </dt>
         <dd>
             Platform Event Object API Name (ex. pfobject__e)
@@ -51,22 +32,21 @@
     </dl>
 </div>
 </script>
-
 <script type="text/javascript">
-    RED.nodes.registerType('salesforce-platform-event-pub', {
-        category: 'Salesforce',
-        color: "#1793d7",
-        defaults: {
-            salesforce: { type: "salesforce-platform-event-config", required: true },
-            eventname: { value: '', required: true },
-            name: { value: '' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "salesforce.png",
-        align: "left",
-        label: function () {
-            return this.name || "publish " + this.eventname;
-        }
-    });
+RED.nodes.registerType('salesforce-platform-event-pub', {
+    category: 'Salesforce',
+    color: "#1793d7",
+    defaults: {
+        salesforce: { type: "salesforce-platform-event-config", required: true },
+        eventname: { value: '', required: true },
+        name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "salesforce.png",
+    align: "left",
+    label: function () {
+        return this.name || "publish " + this.eventname;
+    }
+});
 </script>
