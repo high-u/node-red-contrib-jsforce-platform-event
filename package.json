@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-salesforce-platform-event",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "node-red": {
     "nodes": {
       "salesforce-platform-event-pub": "salesforce-platform-event-pub.js",

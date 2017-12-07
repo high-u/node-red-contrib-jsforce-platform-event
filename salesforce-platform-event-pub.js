@@ -19,6 +19,8 @@ module.exports = function (RED) {
     conn.login(node.username, node.password, function (err, userInfo) {
       if (err) {
         node.status({ fill: "red", shape: "dot", text: "Disconnected" });
+        var msg = {};
+        msg.error = err;
         node.send(msg);
       } else {
         node.status({ fill: "blue", shape: "dot", text: "Connected" });

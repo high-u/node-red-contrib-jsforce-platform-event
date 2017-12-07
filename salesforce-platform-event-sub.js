@@ -15,11 +15,12 @@ module.exports = function (RED) {
 
     var node = this;
 
-    var tpc = {};    
+    var tpc = {};
     var conn = new jsforce.Connection({ loginUrl: node.url });
     conn.login(node.username, node.password, function (err, userInfo) {
       if (err) {
         node.status({ fill: "red", shape: "dot", text: "Disconnected" });
+        var msg = {};
         msg.error = err;
         node.send(msg);
       } else {
