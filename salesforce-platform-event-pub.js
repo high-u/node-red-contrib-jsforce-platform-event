@@ -19,7 +19,6 @@ module.exports = function (RED) {
     conn.login(node.username, node.password, function (err, userInfo) {
       if (err) {
         node.status({ fill: "red", shape: "dot", text: "Disconnected" });
-        msg.error = err;
         node.send(msg);
       } else {
         node.status({ fill: "blue", shape: "dot", text: "Connected" });
@@ -27,7 +26,7 @@ module.exports = function (RED) {
     });
 
     node.on("input", function (msg) {
-      conn.sobject(node.eventname).create(msg.payload, function (err, ret) {  
+      conn.sobject(node.eventname).create(msg.payload, function (err, ret) {
         if (err || !ret.success) {
           msg.error = err;
           msg.return = ret;

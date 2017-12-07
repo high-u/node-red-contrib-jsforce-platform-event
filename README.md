@@ -4,6 +4,7 @@
 
 |date|version|description|
 |:--:|:--:|:--|
+|2017-12-07|0.1.7|Bug fix|
 |2017-12-06|0.1.6|Refactoring|
 |2017-12-05|0.1.3|Released|
 
